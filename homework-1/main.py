@@ -18,10 +18,5 @@ try:
                 for row in reader:
                     cur.execute("INSERT INTO orders VALUES (%s, %s, %s, %s, %s)", row)
             cur.execute("SELECT * FROM orders")
-
-            rows = cur.fetchall()
-            print(rows)
-            for row in rows:
-                print(row)
 finally:
     conn.close()
