@@ -149,7 +149,6 @@ def add_foreign_keys(cur: Any, json_file_1: str) -> None:
         cur.execute(products_query)
         results = cur.fetchall()
         products_list = [dict(row) for row in results]
-        print(products_list)
         with open("products.json", "w", encoding="windows-1252") as file:
             json.dump(products_list, file, ensure_ascii=False, indent=2)
         with open("products.json", encoding="utf-8") as f:
